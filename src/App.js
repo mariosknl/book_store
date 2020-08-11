@@ -1,8 +1,14 @@
 import React from 'react';
-import './App.css';
+import Booklist from './components/BookList';
+import BooksForm from './components/BooksForm';
 
 function App() {
-  return <div className="App">Initializing the app</div>;
+  return (
+    <div>
+      <Booklist />
+      <BooksForm />
+    </div>
+  );
 }
 
 export default App;
