@@ -1,26 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
+const StyledRow = styled.tr`
+  background: purple;
+  color: yellow;
+`;
 export default function Book(props) {
-  const { id, title, category } = props;
+  const { book } = props;
+  const { id, title, category } = book;
   return (
-    <div>
-      This is a row
-      {id}
-      {' '}
-      {title}
-      {' '}
-      { category}
-    </div>
+    <StyledRow>
+      <td>
+        {title}
+      </td>
+      <td>
+
+        { category}
+      </td>
+    </StyledRow>
   );
 }
 
 Book.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  book: PropTypes.objectOf(PropTypes.object).isRequired,
+
 };
-{ /* <tr>
-<td>The table body</td>
-<td>with two columns</td>
-</tr> */ }

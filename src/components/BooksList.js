@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import Book from './Book';
 
 const StyledBooksList = styled.table`
-  background: black;
+  background: pink;
 `;
 
 export default function BooksList() {
@@ -13,7 +13,8 @@ export default function BooksList() {
     <StyledBooksList>
       <thead>
         <tr>
-          <th colSpan="2">The table header</th>
+          <th>Title</th>
+          <th>Category</th>
         </tr>
       </thead>
       <tbody>
