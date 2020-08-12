@@ -1,11 +1,9 @@
-export default (state = { }, action) => {
-  const { books } = state;
+export default (state = {}, action) => {
   switch (action.type) {
     case ('CREATE_BOOK'):
-      books.concat(action.payload);
-      return ({ ...state, books });
+      return ([...state, action.payload]);
     case ('REMOVE_BOOK'):
-      return { ...state, books: books.filter(book => book.id !== action.payload) };
+      return { ...state, books: state.filter(book => book.id !== action.payload) };
     default:
       return state;
   }
