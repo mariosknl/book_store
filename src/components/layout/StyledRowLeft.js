@@ -6,7 +6,8 @@ const StyledRowLeftSide = styled.div`
 color: yellow;
 width: 100%;
 height: 170px;
-border: 2px solid black;
+
+/* border: 2px solid black; */
 box-sizing: border-box;
 padding: 20px 30px;
 display: flex;
