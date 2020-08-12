@@ -12,7 +12,6 @@ export default function BooksList() {
   const { removeBook } = actions;
   const dispatch = useDispatch();
   const handleRemoveBook = id => {
-    console.log(id);
     dispatch(removeBook(id));
   };
   const books = useSelector(state => state.books);
