@@ -12,20 +12,20 @@ const initialState = {
     {
       id: uuidv4(),
       title: 'Lords of the Rings',
-      category: 'Fiction',
+      category: 'Sci-Fi',
     },
     {
       id: uuidv4(),
       title: 'Harry Poter',
-      category: 'Fiction',
+      category: 'Sci-Fi',
     },
     {
       id: uuidv4(),
       title: 'Unfuck Yourself',
-      category: 'Self-improvement',
+      category: 'Learning',
     },
   ],
-  filter: { current: 'All', categories: ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'] },
+  filter: { current: 'All', categories: ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'] },
 };
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ }) : compose;
