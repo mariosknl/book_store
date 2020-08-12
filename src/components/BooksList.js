@@ -8,6 +8,12 @@ import CategoryFilter from './CategoryFilter';
 
 const StyledBooksList = styled.div`
   background: pink;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: spece-between;
+  flex-direction: column;
+  border: 2px solid black;
 `;
 
 export default function BooksList() {
@@ -25,18 +31,9 @@ export default function BooksList() {
     <>
       <CategoryFilter handleChange={handleFilterChange} />
       <StyledBooksList>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map(book => (
-            <Book book={book} key={book.id} handleRemove={handleRemoveBook} />
-          ))}
-
-        </tbody>
+        {books.map(book => (
+          <Book book={book} key={book.id} handleRemove={handleRemoveBook} />
+        ))}
       </StyledBooksList>
     </>
   );
