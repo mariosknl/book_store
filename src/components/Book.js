@@ -8,7 +8,7 @@ const StyledRow = styled.tr`
 `;
 export default function Book(props) {
   const { book } = props;
-  const { id, title, category } = book;
+  const { title, category } = book;
   return (
     <StyledRow>
       <td>
@@ -23,6 +23,7 @@ export default function Book(props) {
 }
 
 Book.propTypes = {
-  book: PropTypes.objectOf(PropTypes.object).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  book: PropTypes.object.isRequired,
 
 };
