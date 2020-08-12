@@ -7,23 +7,25 @@ import { Provider } from 'react-redux';
 import App from './App';
 import rootReducer from './reducers/index';
 
-const initialState = [
-  {
-    id: uuidv4(),
-    title: 'Lords of the Rings',
-    category: 'Fiction',
-  },
-  {
-    id: uuidv4(),
-    title: 'Harry Poter',
-    category: 'Fiction',
-  },
-  {
-    id: uuidv4(),
-    title: 'Unfuck Yourself',
-    category: 'Self-improvement',
-  },
-];
+const initialState = {
+  books: [
+    {
+      id: uuidv4(),
+      title: 'Lords of the Rings',
+      category: 'Fiction',
+    },
+    {
+      id: uuidv4(),
+      title: 'Harry Poter',
+      category: 'Fiction',
+    },
+    {
+      id: uuidv4(),
+      title: 'Unfuck Yourself',
+      category: 'Self-improvement',
+    },
+  ],
+};
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ }) : compose;
 const middleware = [thunk];
