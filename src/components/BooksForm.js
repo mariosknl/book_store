@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import addBookAction from '../actions/index';
+import actions from '../actions/index';
 
 const StyledBookForm = styled.form`
   background: yellow;
@@ -14,6 +14,7 @@ const StyledBookForm = styled.form`
   }
 `;
 export default function BooksForm() {
+  const { addBook } = actions;
   const dispatch = useDispatch();
   let count = 0;
   const [formInputs, setFormInputs] = useState({
@@ -25,7 +26,7 @@ export default function BooksForm() {
     e.preventDefault();
     const input = e.target.querySelector('input').value;
     const select = e.target.querySelector('select').value;
-    dispatch(addBookAction({ title: input, category: select, id: uuidv4() }));
+    dispatch(addBook({ title: input, category: select, id: uuidv4() }));
     setFormInputs({
       ...formInputs,
       title: '',

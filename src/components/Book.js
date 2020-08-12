@@ -6,6 +6,7 @@ const StyledRow = styled.tr`
   background: purple;
   color: yellow;
 `;
+
 export default function Book(props) {
   const { book } = props;
   const { title, category } = book;
@@ -15,8 +16,10 @@ export default function Book(props) {
         {title}
       </td>
       <td>
-
         { category}
+      </td>
+      <td>
+        <i className="fas fa-trash-alt" />
       </td>
     </StyledRow>
   );
