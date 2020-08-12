@@ -9,7 +9,6 @@ const StyledBooksList = styled.table`
 
 export default function BooksList() {
   const books = useSelector(state => state.books);
-  console.log(books);
   return (
     <StyledBooksList>
       <thead>
@@ -18,11 +17,10 @@ export default function BooksList() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <Book />
-          <td>The table body</td>
-          <td>with two columns</td>
-        </tr>
+        {books.map(book => (
+          <Book book={book} key={book.id} />
+        ))}
+
       </tbody>
     </StyledBooksList>
   );

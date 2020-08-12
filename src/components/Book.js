@@ -20,3 +20,7 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
 };
+{ /* <tr>
+<td>The table body</td>
+<td>with two columns</td>
+</tr> */ }
