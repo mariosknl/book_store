@@ -25,6 +25,7 @@ const initialState = {
       category: 'Self-improvement',
     },
   ],
+  filter: { current: 'All', categories: ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'] },
 };
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ }) : compose;

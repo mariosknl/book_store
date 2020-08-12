@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import actions from '../actions/index';
+import selector from '../selectors/selectors';
 
 const StyledBooksList = styled.table`
   background: pink;
@@ -14,7 +15,7 @@ export default function BooksList() {
   const handleRemoveBook = id => {
     dispatch(removeBook(id));
   };
-  const books = useSelector(state => state.books);
+  const books = useSelector(selector);
   return (
     <StyledBooksList>
       <thead>
