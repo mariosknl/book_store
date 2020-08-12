@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import StyledRowCenter from './layout/StyledRowCenter';
-import styledRowRight from './layout/StyledRowRight';
+import StyledRowRight from './layout/StyledRowRight';
 import StyledRowLeft from './layout/StyledRowLeft';
 
 const StyledBookCard = styled.div`
@@ -22,6 +22,7 @@ export default function Book(props) {
 
       <StyledRowLeft title={title} category={category} handleRemove={handleRemove} />
       <StyledRowCenter />
+      <StyledRowRight />
     </StyledBookCard>
   );
 }
