@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Provider } from 'react-redux';
 import App from './App';
 import rootReducer from './reducers/index';
+import Navbar from './components/Navbar';
 
 const initialState = {
   books: [
@@ -38,6 +39,7 @@ const store = createStore(rootReducer, initialState, enhancer);
 
 ReactDOM.render(
   <Provider store={store}>
+    <Navbar />
     <App />
   </Provider>,
   document.getElementById('root'),

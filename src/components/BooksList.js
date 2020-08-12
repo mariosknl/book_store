@@ -6,7 +6,7 @@ import actions from '../actions/index';
 import selector from '../selectors/selectors';
 import CategoryFilter from './CategoryFilter';
 
-const StyledBooksList = styled.table`
+const StyledBooksList = styled.div`
   background: pink;
 `;
 
