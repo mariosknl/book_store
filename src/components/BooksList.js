@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
 const StyledBooksList = styled.table`
@@ -7,6 +8,8 @@ const StyledBooksList = styled.table`
 `;
 
 export default function BooksList() {
+  const books = useSelector(state => state.books);
+  console.log(books);
   return (
     <StyledBooksList>
       <thead>
