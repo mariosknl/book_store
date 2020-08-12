@@ -8,8 +8,10 @@ const StyledRow = styled.tr`
 `;
 
 export default function Book(props) {
-  const { book } = props;
-  const { title, category } = book;
+  const { book, handleRemove } = props;
+  const {
+    id, title, category,
+  } = book;
   return (
     <StyledRow>
       <td>
@@ -19,7 +21,9 @@ export default function Book(props) {
         { category}
       </td>
       <td>
-        <i className="fas fa-trash-alt" />
+        <button type="submit" onClick={() => handleRemove(id)}>
+          <i className="fas fa-trash-alt" />
+        </button>
       </td>
     </StyledRow>
   );
@@ -28,5 +32,6 @@ export default function Book(props) {
 Book.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   book: PropTypes.object.isRequired,
+  handleRemove: PropTypes.func.isRequired,
 
 };
