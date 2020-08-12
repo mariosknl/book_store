@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import styledRowCenter from './layout/StyledRowCenter';
 import styledRowRight from './layout/StyledRowRight';
 import StyledRowLeft from './layout/StyledRowLeft';
+
+const StyledBookCard = styled.div`
+  background: white;
+  width: 85%;
+`;
 
 export default function Book(props) {
   const { book, handleRemove } = props;
@@ -10,18 +16,10 @@ export default function Book(props) {
     id, title, category,
   } = book;
   return (
-    <StyledRowLeft>
-      <h5>
-        { category}
-      </h5>
-      <h2>
-        {title}
-      </h2>
-      <span>Author</span>
-      <button type="submit" onClick={() => handleRemove(id)}>
-        <i className="fas fa-trash-alt" />
-      </button>
-    </StyledRowLeft>
+    <StyledBookCard>
+
+      <StyledRowLeft title={title} category={category} handleRemove={handleRemove} />
+    </StyledBookCard>
   );
 }
 
