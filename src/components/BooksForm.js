@@ -6,13 +6,25 @@ const StyledBookForm = styled.form`
   color: green;
 `;
 export default function BooksForm() {
+  let count = 0;
   const [formInputs, setForminputs] = useState({
     title: '',
     category: ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'],
   });
+  const { title, category } = formInputs;
   return (
     <StyledBookForm>
-      Hello from the books form
+      <div className="title">
+        <input type="text" value={title} />
+      </div>
+      <div className="category">
+        <select name="" id="">
+          {category.map(cat => {
+            count += 1;
+            return <option value={cat} key={count}>{cat}</option>;
+          })}
+        </select>
+      </div>
     </StyledBookForm>
   );
 }
