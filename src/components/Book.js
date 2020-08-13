@@ -32,7 +32,8 @@ export default function Book(props) {
 Book.propTypes = {
   handleRemove: PropTypes.func.isRequired,
   book: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    category: PropTypes.string,
+    id: PropTypes.string,
   }).isRequired,
 };
