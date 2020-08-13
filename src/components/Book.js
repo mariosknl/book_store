@@ -30,8 +30,9 @@ export default function Book(props) {
 }
 
 Book.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  book: PropTypes.object.isRequired,
   handleRemove: PropTypes.func.isRequired,
-
+  book: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
 };

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import Book from './Book';
+import Book from '../components/Book';
 import actions from '../actions/index';
 import selector from '../selectors/selectors';
-import CategoryFilter from './CategoryFilter';
+import CategoryFilter from '../components/CategoryFilter';
 
 const StyledBooksList = styled.table`
   background: pink;
