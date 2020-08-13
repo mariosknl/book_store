@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledRowCenterSide = styled.div`
-  color: yellow;
   width: 100%;
   height: 170px;
   box-sizing: border-box;
@@ -25,7 +24,7 @@ const StyledRowCenterSide = styled.div`
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: black;
+    color: #121212;
   }
 
   h5 {
@@ -36,7 +35,7 @@ const StyledRowCenterSide = styled.div`
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #e8e8e8;
+    color: #121212;
   }
 
 `;

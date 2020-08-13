@@ -2,18 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledNavbar = styled.nav`
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: red;
+  padding: 0 4rem;
   font-family: 'Montserrat', sans-serif;
 
   ul {
     display: flex;
     align-items: center;
     list-style: none;
+    padding: 0;
+
     li {
-      margin-left: 1rem;
+      margin-right: 1rem;
+      padding: 0;
       color: #F4F5F9;
       font-size: 13px;
     }

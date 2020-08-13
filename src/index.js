@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { v4 as uuidv4 } from 'uuid';
 import { Provider } from 'react-redux';
-import App from './App';
+import App from './components/App';
 import rootReducer from './reducers/index';
 import Navbar from './components/Navbar';
 

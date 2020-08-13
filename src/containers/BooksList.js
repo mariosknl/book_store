@@ -1,19 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import Book from './Book';
+import Book from '../components/Book';
 import actions from '../actions/index';
 import selector from '../selectors/selectors';
-import CategoryFilter from './CategoryFilter';
+import CategoryFilter from '../components/CategoryFilter';
+import BookForm from './BooksForm';
 
 const StyledBooksList = styled.div`
-  background: pink;
+  overflow: hidden;
+  box-sizing: border-box;
   width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: spece-between;
   flex-direction: column;
-  border: 2px solid black;
+  margin: 0 auto;
+  padding: 0 4rem;
+`;
+
+const StyledHr = styled.hr`
+  width: 100%;
+  margin: 5rem;
 `;
 
 export default function BooksList() {
@@ -34,6 +43,8 @@ export default function BooksList() {
         {books.map(book => (
           <Book book={book} key={book.id} handleRemove={handleRemoveBook} />
         ))}
+        <StyledHr />
+        <BookForm />
       </StyledBooksList>
     </>
   );

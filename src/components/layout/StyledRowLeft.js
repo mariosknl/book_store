@@ -26,7 +26,7 @@ flex-direction: column;
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #e8e8e8;
+    color: #121212;
   }
 }
 
@@ -47,7 +47,7 @@ flex-direction: column;
 }
 
 .bottom {
-  a {
+  button {
     height: 19px;
     font-size: 14px;
     font-weight: 300;
@@ -57,6 +57,9 @@ flex-direction: column;
     letter-spacing: normal;
     color: #4386bf;
     text-decoration: none;
+    border: none;
+    background-color: transparent;
+    outline: none;
   }
 }
 
@@ -103,9 +106,9 @@ export default function StyledRowLeft(props) {
 
       </div>
       <div className="bottom">
-        <a href="#">Comments |</a>
-        <a href="#" onClick={() => handleRemove(id)}> Remove |</a>
-        <a href="#"> Edit</a>
+        <button type="submit">Comments |</button>
+        <button type="submit" onClick={() => handleRemove(id)}> Remove |</button>
+        <button type="submit"> Edit</button>
 
       </div>
 

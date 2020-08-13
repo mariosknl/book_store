@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledRowCenterSide = styled.div`
-  color: yellow;
   width: 100%;
   height: 170px;
 
@@ -26,11 +25,11 @@ const StyledRowCenterSide = styled.div`
   }
 
   .top {
-    color: #e8e8e8;
+    color: #121212;
   }
 
   .middle {
-    color: black;
+    color: #121212;
   }
 
   button {

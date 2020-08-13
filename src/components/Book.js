@@ -7,7 +7,7 @@ import StyledRowLeft from './layout/StyledRowLeft';
 
 const StyledBookCard = styled.div`
   background: white;
-  width: 85%;
+  width: 100%;
   display: flex;
   border: 2px solid black;
 `;
@@ -15,11 +15,10 @@ const StyledBookCard = styled.div`
 export default function Book(props) {
   const { book, handleRemove } = props;
   const {
-    id, title, category,
+    title, category,
   } = book;
   return (
     <StyledBookCard>
-
       <StyledRowLeft title={title} category={category} handleRemove={handleRemove} />
       <StyledRowCenter />
       <StyledRowRight />
@@ -29,7 +28,10 @@ export default function Book(props) {
 
 Book.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  book: PropTypes.object.isRequired,
   handleRemove: PropTypes.func.isRequired,
-
+  book: PropTypes.shape({
+    title: PropTypes.string,
+    category: PropTypes.string,
+    id: PropTypes.string,
+  }).isRequired,
 };
