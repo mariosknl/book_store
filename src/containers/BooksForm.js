@@ -12,6 +12,7 @@ const StyledBookForm = styled.form`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 3rem;
+  background: #fafafa;
 
   button {
     color: white;

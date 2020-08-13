@@ -5,15 +5,21 @@ import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import actions from '../actions/index';
 import selector from '../selectors/selectors';
+import BookForm from './BooksForm';
+
+const StyledHr = styled.hr`
+  width: 100%;
+  margin: 2rem;
+`;
 
 const StyledBooksList = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  background: #fafafa;
 
 `;
 
@@ -25,13 +31,20 @@ function BooksList(props) {
   };
 
   return (
+    <>
 
-    <StyledBooksList>
-      {books.map(book => (
-        <Book book={book} key={book.id} handleRemove={handleRemoveBook} />
-      ))}
+      <StyledBooksList>
+        {books.map(book => (
+          <Book book={book} key={book.id} handleRemove={handleRemoveBook} />
+        ))}
 
-    </StyledBooksList>
+        <StyledHr />
+
+        <h2>Add New Book</h2>
+
+        <BookForm />
+      </StyledBooksList>
+    </>
   );
 }
 

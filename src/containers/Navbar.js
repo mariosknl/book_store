@@ -40,8 +40,9 @@ i {
   font-size: 20px;
   padding: 0.5rem;
   margin-right: 1rem;
-  border: 2px solid #000;
+  border: 2px solid #c7c8cc;
   border-radius: 50%;
+  color: #0290ff;
 }
 `;
 

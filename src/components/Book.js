@@ -16,12 +16,13 @@ const StyledBookCard = styled.div`
 
 export default function Book(props) {
   const { book, handleRemove } = props;
+
   const {
-    title, category,
+    title, category, id,
   } = book;
   return (
     <StyledBookCard>
-      <StyledRowLeft title={title} category={category} handleRemove={handleRemove} />
+      <StyledRowLeft title={title} id={id} category={category} handleRemove={handleRemove} />
       <StyledRowCenter />
       <StyledRowRight />
     </StyledBookCard>
