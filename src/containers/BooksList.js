@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import actions from '../actions/index';
 import selector from '../selectors/selectors';
-import CategoryFilter from '../components/CategoryFilter';
 import BookForm from './BooksForm';
 
 const StyledBooksList = styled.div`
-  overflow: hidden;
+  overflow-x: hidden;
   box-sizing: border-box;
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: spece-between;
+  background: #fafafa;
+  justify-content: space-between;
   flex-direction: column;
   margin: 0 auto;
   padding: 0 4rem;
@@ -25,20 +26,15 @@ const StyledHr = styled.hr`
   margin: 5rem;
 `;
 
-export default function BooksList() {
-  const { changeFilter, removeBook } = actions;
-  const dispatch = useDispatch();
+function BooksList(props) {
+  const { removeBook } = actions;
+  const { dispatch, books } = props;
   const handleRemoveBook = id => {
     dispatch(removeBook(id));
   };
-  const books = useSelector(selector);
-  const handleFilterChange = e => {
-    const newFilter = e.target.value;
-    dispatch(changeFilter(newFilter));
-  };
+
   return (
     <>
-      <CategoryFilter handleChange={handleFilterChange} />
       <StyledBooksList>
         {books.map(book => (
           <Book book={book} key={book.id} handleRemove={handleRemoveBook} />
@@ -49,3 +45,17 @@ export default function BooksList() {
     </>
   );
 }
+
+const mapStateToProps = state => ({
+  books: selector(state.books, state.filter),
+});
+
+export default (connect(mapStateToProps))(BooksList);
+
+BooksList.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  books: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    category: PropTypes.string,
+  })).isRequired,
+};

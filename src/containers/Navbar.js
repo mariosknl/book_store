@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import CategoryFilter from './CategoryFilter';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import CategoryFilter from '../components/CategoryFilter';
+import actions from '../actions/index';
 
 const StyledNavbar = styled.nav`
 box-sizing: border-box;
@@ -42,14 +45,22 @@ i {
 }
 `;
 
-export default function Navbar() {
+function Navbar(props) {
+  const { dispatch } = props;
+  const { changeFilter } = actions;
+
+  const handleFilterChange = e => {
+    const newFilter = e.target.value;
+    dispatch(changeFilter(newFilter));
+  };
+
   return (
     <StyledNavbar>
       <ul>
         <li><h1>Bookstore CMS</h1></li>
         <li>Books</li>
         <li>
-          <CategoryFilter />
+          <CategoryFilter handleChange={handleFilterChange} />
         </li>
       </ul>
       <div>
@@ -58,3 +69,9 @@ export default function Navbar() {
     </StyledNavbar>
   );
 }
+
+export default connect()(Navbar);
+
+Navbar.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};

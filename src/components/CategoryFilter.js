@@ -23,7 +23,6 @@ export default function CategoryFilter(props) {
         count += 1;
         return <option value={category} key={count}>{category}</option>;
       })}
-      <option>Horror</option>
     </CategoryFilterSelect>
   );
 }

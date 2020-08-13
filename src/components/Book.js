@@ -9,7 +9,9 @@ const StyledBookCard = styled.div`
   background: white;
   width: 100%;
   display: flex;
-  border: 2px solid black;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  margin-bottom: 3rem;
 `;
 
 export default function Book(props) {
