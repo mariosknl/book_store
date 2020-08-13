@@ -4,6 +4,16 @@ This is a book store project created with React and Redux as a state management 
 
 [Live Link](https://book-store-microverse.herokuapp.com/)
 
+### FEATURES
+
+It allows you to add and remove books.
+
+### BUILT WITH
+
+- React
+- Javascript
+- Redux
+
 ### AUTHORS
 
 👤 Marios Kanellopoulos
