@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import actions from '../actions/index';
 
 const StyledBookForm = styled.form`
@@ -30,6 +31,7 @@ class BooksForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const { dispatch } = this.props;
     const { addBook } = actions;
     const input = e.target.querySelector('input').value;
     const select = e.target.querySelector('select').value;
@@ -37,7 +39,7 @@ class BooksForm extends Component {
       title: input,
       category: select,
     };
-    this.props.dispatch(addBook(newBook));
+    dispatch(addBook(newBook));
     this.setState({
       title: '',
     });
@@ -71,3 +73,7 @@ class BooksForm extends Component {
   }
 }
 export default (connect())(BooksForm);
+
+BooksForm.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
