@@ -4,8 +4,10 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 const CategoryFilterSelect = styled.select`
-  background: lightblue;
-  color: white;
+background: transparent;
+color: #c7c8cc;
+border: none;
+outline: none;
 `;
 
 export default function CategoryFilter(props) {
@@ -16,7 +18,7 @@ export default function CategoryFilter(props) {
 
   return (
     <CategoryFilterSelect onChange={handleChange}>
-      <option value="All">All</option>
+      <option value="All">Category</option>
       {categories.map(category => {
         count += 1;
         return <option value={category} key={count}>{category}</option>;

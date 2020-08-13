@@ -11,7 +11,7 @@ const StyledBookForm = styled.form`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
 
   button {
     color: blue;
@@ -25,6 +25,7 @@ const StyledBookForm = styled.form`
   .title {
     flex-grow: 3;
     margin-right: 3rem;
+
     input {
       font-size: 20px;
       width: 100%;
@@ -36,16 +37,15 @@ const StyledBookForm = styled.form`
   .category {
     flex-grow: 2;
     margin-right: 0.5rem;
-  select {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
-    text-align-last: left;
-    border-radius: 4px;
-    
-  }
 
+    select {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      font-size: 20px;
+      text-align-last: left;
+      border-radius: 4px;
+    }
   }
 `;
 class BooksForm extends Component {
