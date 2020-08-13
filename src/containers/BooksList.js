@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import Book from './Book';
+import Book from '../components/Book';
 
 const StyledBooksList = styled.table`
   background: pink;

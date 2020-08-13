@@ -6,24 +6,23 @@ const StyledRow = styled.tr`
   background: purple;
   color: yellow;
 `;
-export default function Book(props) {
-  const { book } = props;
-  const { title, category } = book;
-  return (
-    <StyledRow>
-      <td>
-        {title}
-      </td>
-      <td>
+const Book = ({ book: { title, category } }) => (
+  <StyledRow>
+    <td>
+      {title}
+    </td>
+    <td>
 
-        { category}
-      </td>
-    </StyledRow>
-  );
-}
+      { category}
+    </td>
+  </StyledRow>
+);
 
 Book.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  book: PropTypes.object.isRequired,
-
+  book: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
 };
+
+export default Book;
