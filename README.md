@@ -2,7 +2,11 @@
 
 This is a book store project created with React and Redux as a state management utility.
 
-[Live Link](https://book-store-microverse.herokuapp.com/)
+### Screenshots
+
+#### Main Menu
+
+- ![Main page](./screenshot.png)
 
 ### FEATURES
 
