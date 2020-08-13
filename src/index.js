@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Provider } from 'react-redux';
 import App from './components/App';
 import rootReducer from './reducers/index';
+import './styles.css';
 
 const initialState = {
   books: [

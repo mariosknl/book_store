@@ -11,15 +11,18 @@ const StyledBookForm = styled.form`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  margin-bottom: 3rem;
 
   button {
-    color: blue;
-    background: red;
+    color: white;
+    background: hsla(230, 84%, 63%, 1);
     flex-grow: 1;
-    padding: 10px 20px;
+    padding: 7px 20px;
     border-radius: 6px;
     font-size: 20px;
+    font-weight: bold;
+    border: none;
+    outline: none;
   }
 
   .title {
@@ -29,8 +32,10 @@ const StyledBookForm = styled.form`
     input {
       font-size: 20px;
       width: 100%;
-      padding: 10px 20px;
+      padding: 7px 20px;
       border-radius: 4px;
+      border: 1px solid #e8e8e8;
+      outline: none;
     }
   }
 
@@ -40,11 +45,14 @@ const StyledBookForm = styled.form`
 
     select {
       box-sizing: border-box;
+      background: transparent;
       width: 100%;
-      padding: 10px;
-      font-size: 20px;
+      padding: 7px 10px;
+      font-size: 17px;
       text-align-last: left;
       border-radius: 4px;
+      border: 1px solid #e8e8e8;
+      outline: none;
     }
   }
 `;
