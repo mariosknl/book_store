@@ -1,22 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
-import Book from './Book';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Book from '../components/Book';
 import actions from '../actions/index';
 import selector from '../selectors/selectors';
-import CategoryFilter from './CategoryFilter';
+import CategoryFilter from '../components/CategoryFilter';
 
 const StyledBooksList = styled.table`
   background: pink;
 `;
 
-export default function BooksList() {
+function BooksList(props) {
   const { changeFilter, removeBook } = actions;
-  const dispatch = useDispatch();
+  const { dispatch, books } = props;
   const handleRemoveBook = id => {
     dispatch(removeBook(id));
   };
-  const books = useSelector(selector);
+
   const handleFilterChange = e => {
     const newFilter = e.target.value;
     dispatch(changeFilter(newFilter));
@@ -41,3 +42,17 @@ export default function BooksList() {
     </>
   );
 }
+
+const mapStateToProps = state => ({
+  books: selector(state.books, state.filter),
+});
+
+export default (connect(mapStateToProps))(BooksList);
+
+BooksList.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  books: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    category: PropTypes.string,
+  })).isRequired,
+};
